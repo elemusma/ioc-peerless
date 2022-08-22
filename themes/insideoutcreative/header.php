@@ -95,7 +95,7 @@ echo '</div>';
 
 </header>
 <?php
-if(!is_front_page()){
+if(!is_front_page() && !is_page() ){
 echo '<section class="hero position-relative">';
 $globalPlaceholderImg = get_field('global_placeholder_image','options');
 if(is_page()){
