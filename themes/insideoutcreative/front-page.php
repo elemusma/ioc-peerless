@@ -186,7 +186,12 @@ if(have_rows('content_group_bottom')):
     $contentDataAos = get_sub_field('content_data_aos');
     $content = get_sub_field('content');
 
-    echo '<section class="position-relative bg-attachment mt-5 mb-5 ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg['id'],'full') . ');background-size:cover;background-attachment:fixed;padding:250px 0;' . $style . '">';
+    if($bgImg){
+        echo '<section class="position-relative bg-attachment mt-5 mb-5 ' . $classes . '" style="background:url(' . wp_get_attachment_image_url($bgImg['id'],'full') . ');background-size:cover;background-attachment:fixed;padding:250px 0;' . $style . '">';
+        // echo '</section>';
+    } else {
+        echo '<section class="position-relative bg-attachment mt-5 mb-5 ' . $classes . '" style="padding:250px 0;' . $style . '">';
+    }
 
     echo '<div class="container">';
     echo '<div class="row row-content align-items-center justify-content-between">';

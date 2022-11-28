@@ -20,6 +20,7 @@ input.gform_button.button:hover {
 
 .gform_footer.top_label {
   margin-bottom: -90px !important;
+  text-align: center;
 }
 
 input,
