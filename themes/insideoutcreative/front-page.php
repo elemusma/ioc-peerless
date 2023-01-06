@@ -228,15 +228,17 @@ echo '</div>';
 
 $gallery = get_sub_field('gallery');
 if( $gallery ): 
-foreach( $gallery as $image ):
-echo '<div class="col-md-4 col-12 col col-partners overflow-h">';
-echo '<div class="position-relative">';
-// echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set">';
-echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 h-auto','style'=>'object-fit:contain;'] );
-// echo '</a>';
-echo '</div>';
-echo '</div>';
-endforeach; 
+    echo '<div class="partners-carousel owl-carousel owl-theme">';
+    foreach( $gallery as $image ):
+        echo '<div class="text-center pl-4 pr-4 overflow-h">';
+        // echo '<div class="position-relative">';
+        // echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" data-lightbox="image-set">';
+        echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 h-auto','style'=>'object-fit:contain;'] );
+        // echo '</a>';
+        // echo '</div>';
+        echo '</div>';
+    endforeach; 
+    echo '</div>';
 endif;
 
 echo '</div>';
